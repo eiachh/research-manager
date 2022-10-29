@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: research-manager
+  labels:
+    io.kompose.service: research-manager
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+        maxSurge: 2
+        maxUnavailable: 0
+  selector:
+    matchLabels:
+      io.kompose.service: research-manager
+  template:
+    metadata:
+      labels:
+        io.kompose.service: research-manager
+    spec:
+      containers:
+      - name: research-manager
+        image: eiachh/research-manager
+        imagePullPolicy: "Never"
+        env:
+        - name: "PYTHONUNBUFFERED"
+          value: "1"
+        ports:
+        - containerPort: 5003
