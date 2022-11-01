@@ -1,7 +1,7 @@
 from glob import glob
 import json
 import math
-from common_lib import constants
+from common_lib.const import constants
 from flask import Flask,request
 
 class researchManager():
