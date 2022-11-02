@@ -78,8 +78,8 @@ class researchManager():
 
         return {'m' : metalUnitPrice, 'c' : crystalAdjustedUnitPrice, 'd' : deuAdjustedUnitPrice}
 
-    def isResearchAffordable(self, odameId):
-        attrNameOfResearch = constants.convertOgameIDToAttrName(odameId)
+    def isResearchAffordable(self, ogameId):
+        attrNameOfResearch = constants.convertOgameIDToAttrName(ogameId)
         researchPrices = self.request_data['researchPrices']
 
         allowance = self.request_data['allowanceResources']
