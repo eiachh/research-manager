@@ -15,7 +15,7 @@ class researchManager():
         if(ogameId == -1):
             return {'researchManager' : {'researchable' : {'researchID' : -1, 'researchLevel' : -1}}}
 
-        researchLevel = self.request_data['researchLevels'][constants.convertOgameIDToAttrName(ogameId)]
+        researchLevel = self.request_data['researchLevels'][constants.convertOgameIDToAttrName(ogameId)] + 1
         return {'researchManager' : {'researchable' : {'researchID' : ogameId, 'researchLevel' : researchLevel}}}
 
     def getPrefferedResearchJson(self):
